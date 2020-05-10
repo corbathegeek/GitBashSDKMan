@@ -20,30 +20,10 @@ Copy just the **'zip.exe'** file from the 'bin' directory from zip-3.0-bin.zip t
 
 Voila!
 
-### Modify the Install Script
-**Spoiler alert:** As written, the install script:
+### Run Install Script
+**NOW** you can run the install script:
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
-won't work under Git Bash. The problem is that ${HOME} is /home/userID under Git Bash. You have to change it to a $HOME that makes sense under Git Bash.  Specifically, you're going to have to do a global replace:
-```shell
-${HOME}/ --> /c/Users/yourID/
-```
-So, to do that, let's download a copy of the script:
-```bash
-curl -s "https://get.sdkman.io" > ~/bin/installSDKMan.sh
-```
-change the script to executable
-```bash
-chmod +x ~/bin/installSDKMan.sh
-```
-And do the global replace using your favorite editor.
-
-## Modify the sdkman-init.sh Script
-
-Now do the same $HOME modifications to the .sdkman/bin/sdkman-init.sh script.
-
-## Now, Run the Install Script
 
 Try it out. Worked for me.
-
